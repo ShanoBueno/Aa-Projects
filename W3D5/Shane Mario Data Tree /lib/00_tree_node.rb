@@ -57,32 +57,16 @@ class PolyTreeNode
       return nil
     end
 
-      def bfs(node,value)
-      if node.value == value
-        return node
+      def bfs(target = nil, &prc)
+     
+        parents = [self]
+        until parents.empty?
+          parent = parents.shift
+
+            return parent if parent.value == target
+            parents.concat(parent.children)
+        end
       end
-    end
-
-      # if value < node.value 
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
