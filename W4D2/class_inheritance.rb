@@ -12,16 +12,19 @@ class Employee
     if title != manager
       bonus = salary * multiplier
     else
+      bonus = self.salary_search * multiplier
     end
   end
 
-  def salary_search
-    salaries = []
-    queue = [self]
-    until queue.empty?
-      employee = queue.shift
-  
-  
+  def salary_search(worker)
+    salaries = 0
+    if self.title == employee
+      salaries += self.salary
+    end
+      self.each do |employee|
+        salary_search(employee)
+      end
+      salaries
   end
 
 
@@ -30,11 +33,29 @@ class Employee
 end
 
 class Manager < Employee
-  def initialize
+
+  attr_reader :employees
+  
+  def initialize(name, title, salary, boss)
+    super(name, title, salary, boss)
     @employees = []
   end
 
+  def employees=(argument)
+    @employees << argument
+  end
 
 
 end
 
+
+# p john = Employee.new('John', 'burger flipper', 15, 'Jeff')
+
+# p penelope = Employee.new('Penelope', 'burger flipper', 15, 'Jeff')
+
+ p michael_scott = Manager.new('Michael', 'branch_manager', 400, 'David Wallace')
+
+p dwight = Manager.new('Dwight', 'Assistant to the Assistant Branch Manager', 10, michael_scott)
+
+p michael_scott.employees= dwight
+p michael_scott.employees
