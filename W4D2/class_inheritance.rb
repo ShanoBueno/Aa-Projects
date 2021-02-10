@@ -7,10 +7,9 @@ class Employee
   end
 
   def boss=(node)
-    prevboss = self.boss
     @boss = node
     if node != nil 
-      node.employees << self
+      node.add_employees(self)
     end
   end
 
@@ -48,12 +47,12 @@ class Manager < Employee
   attr_reader :employees
   
   def initialize(name, title, salary, boss)
-    super(name, title, salary, boss)
+    super
     @employees = []
   end
 
   def add_employee(employee)
-    employee.boss= self
+    self.employees << employee
   end
 
 
