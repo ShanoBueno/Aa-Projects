@@ -1,4 +1,5 @@
 require_relative 'piece'
+require_relative 'rook'
 
 class Board
 
@@ -22,7 +23,7 @@ end
 
 def pieces
   @board[0].each_with_index do |ele,idx|
-    @board[0][idx]= Piece.new
+    @board[0][idx]= Rook.new(:white, self, [0][idx])
   end
   @board[1].each_with_index do |ele, idx|
     @board[1][idx]= Piece.new
