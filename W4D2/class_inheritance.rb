@@ -3,10 +3,21 @@ class Employee
     @name = name
     @title = title
     @salary = salary
-    @boss = boss
-    
-  
+    @boss = nil 
   end
+
+  def boss=(node)
+    prevboss = self.boss
+    @boss = node
+    if node != nil 
+      node.employees << self
+    end
+  end
+
+
+
+
+
 
   def bonus(multiplier)
     if title != manager
@@ -21,7 +32,7 @@ class Employee
     if self.title == employee
       salaries += self.salary
     end
-      self.each do |employee|
+      self.employees.each do |employee|
         salary_search(employee)
       end
       salaries
@@ -41,21 +52,22 @@ class Manager < Employee
     @employees = []
   end
 
-  def employees=(argument)
-    @employees << argument
+  def add_employee(employee)
+    employee.boss= self
   end
+
 
 
 end
 
 
-# p john = Employee.new('John', 'burger flipper', 15, 'Jeff')
+# p john = Employee.new('John', 'employee', 15, 'Jeff')
 
-# p penelope = Employee.new('Penelope', 'burger flipper', 15, 'Jeff')
+# p penelope = Employee.new('Penelope', 'employee', 15, 'Jeff')
 
- p michael_scott = Manager.new('Michael', 'branch_manager', 400, 'David Wallace')
+p michael_scott = Manager.new('Michael', 'manager', 400, nil)
 
-p dwight = Manager.new('Dwight', 'Assistant to the Assistant Branch Manager', 10, michael_scott)
+p dwight = Manager.new('Dwight', 'manager', 10, michael_scott)
 
-p michael_scott.employees= dwight
+p michael_scott.add_employee(dwight)
 p michael_scott.employees
