@@ -1,9 +1,9 @@
 class Piece
 
-  def initialize(color, board, pos)
-    @color = :color
-    @board = Board.new
-    @pos = []
+  def initialize
+    # @color = :color
+    # @board = Board.new
+    # @pos = []
   end
 
   def pos=(value)
@@ -12,6 +12,5 @@ class Piece
     @pos = [row,col]
   end
  
-  def board_Setup
-
+  
 end
