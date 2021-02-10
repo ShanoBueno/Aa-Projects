@@ -1,23 +1,24 @@
 class Employee 
-  def initialize(name, title, salary, boss)
+  attr_reader :title, :salary
+  def initialize(name, title, salary, boss = nil)
     @name = name
     @title = title
     @salary = salary
-    @boss = nil 
+    self.boss = boss 
   end
 
   def boss=(node)
     @boss = node
     if node != nil 
-      node.add_employees(self)
+      node.add_employee(self)
     end
   end
 
   def bonus(multiplier)
     if @title != 'Manager'
       bonus = @salary * multiplier
-    else
-      bonus = self.salary_search * multiplier
+    # else
+    #   self.salary_search * multiplier
     end
   end
 end
@@ -30,55 +31,28 @@ class Manager < Employee
     super
     @employees = []
   end
+  
+  def bonus(multiplier)
+    self.salary_search * multiplier
+  end
+
 
   def add_employee(employee)
     self.employees << employee
   end
 
-  # def bfs(node)
-  #   queue = []
-  #   queue.push(node)
-  #   while(queue.size != 0)
-  #     n = queue.shift
-  #     puts n.value
-  #     n.children.each do |child|
-  #       queue.push(child)
-  #     end
-  #   end
-  # end
-  # bfs(root)
-
   def salary_search
     funding = 0
-
-    queue = []
-    queue.push(self)
-    while (queue.size != 0)
-      n = queue.shift
-      puts n
-      puts n.salary
-      puts n.title
-      if n.title != "Employee"
-        n.employees.each do |employee|
-          funding += employee.salary
-        queue.push(employee)
-        else
-          funding += n.salary
+    self.employees.each do |employee|
+      if employee.title == "Manager"
+        funding += employee.salary + employee.salary_search
+      else
+        funding += employee.salary
       end
     end
     funding
-    end
+
   end
-  # def salary_search(worker)
-  #   salaries = 0
-  #   if @title == 'Employee'
-  #     salaries += self.salary
-  #   end
-  #     self.employees.each do |employee|
-  #       salary_search(employee)
-  #     end
-  #     salaries
-  # end
 
 
 end
@@ -89,6 +63,7 @@ shawna = Employee.new('Shawna', 'Employee', 12000, darren)
 david = Employee.new('David', 'Employee', 10000, darren)
 
 
-puts shawna.bonus(2)
+# puts shawna.bonus(2)
+p ned.employees
 
 puts ned.bonus(5)
