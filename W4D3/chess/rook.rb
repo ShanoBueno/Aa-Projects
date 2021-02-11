@@ -5,8 +5,12 @@ class Rook < Piece
 
 def initialize
   super
-  @symbol = :rook
 end
+
+def symbol
+  :Rook
+end
+
 
 def move_dirs
   horizontal_dirs

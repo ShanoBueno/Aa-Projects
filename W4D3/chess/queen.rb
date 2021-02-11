@@ -5,8 +5,12 @@ class Queen < Piece
 
 def initialize
   super
-  @symbol = :queen
 end
+
+def symbol
+  :Queen
+end
+
 
 def move_dirs
   horizontal_dirs

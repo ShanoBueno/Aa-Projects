@@ -5,7 +5,10 @@ class King < Piece
 
 def initialize
   super
-  @symbol = :king
+end
+
+def symbol
+  :King
 end
 
 def move_diffs

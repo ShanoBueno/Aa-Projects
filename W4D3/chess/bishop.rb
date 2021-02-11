@@ -5,7 +5,10 @@ class Bishop < Piece
 
 def initialize
   super
-  @symbol = :bishop
+end
+
+def symbol
+  :Bishop
 end
 
 def move_dirs
