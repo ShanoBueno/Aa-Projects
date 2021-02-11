@@ -1,4 +1,5 @@
 require_relative 'piece'
+require_relative 'slideable'
 
 class Rook < Piece
 
@@ -8,13 +9,7 @@ def initialize
 end
 
 def move_dirs
- directions = [
-   [1,0],
-   [-1,0],
-   [0,1],
-   [0,-1]
- ]
- 
+  horizontal_dirs
 end
 
 end
