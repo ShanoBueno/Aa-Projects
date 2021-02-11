@@ -28,15 +28,24 @@ DIAGONAL_DIRS = [[-1,1],[1,1],[1,-1],[-1,-1]]
   def grow_unblocked_moves_in_dir(dx, dy)
     good_moves = []
     pos = [dx, dy]
-    until dx == 7 || dx == 0 && dy == 7 || dy == 0 
+    until (dx > 7 || dx < 0)|| (dy > 7 || dy < 0) 
      dx += dx
      dy += dy 
+     if @board[pos] != nil
+      block_color = @boad[pos].color
+      if block_color == self.color
+        break
+      else
+        good_moves << [dx, dy]
+        break
+      end
+     end
      good_moves << [dx, dy]
     end
   end
 
 
-        
+       
   
   
 
