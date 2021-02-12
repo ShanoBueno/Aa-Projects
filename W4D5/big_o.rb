@@ -1,4 +1,5 @@
 require 'benchmark'
+require "byebug"
 
 
 
@@ -40,17 +41,42 @@ puts
 puts "-" * 30 + "Largest Contiguous Sub-sum" + "-" * 30
 puts
 
-def largest_contigiuous_subsum(arr)
+def largest_contigiuous_subsum(arr) # n^3
 
   subs = []
-  (0..arr.length).each do |i|
-    subs << arr.combination(i).to_a
+  (0...arr.length).each do |idx|
+    arr.each_with_index do |el, idx_2|
+      if idx <= idx_2
+        subs << arr[idx..idx_2]
+      end
+    end
   end
-  subs
+  max = subs.map! {|sub| sub.sum}.max
 end
 
-list2 = [5, 3, -7]
-p largest_contigiuous_subsum(list2) #=> 8
+ # subs << arr.combination(i).to_a
+
+ def largest_contigiuous_subsum_2(arr)
+  max = arr[0]
+  current_sum = arr[0]
+  arr.inject(0) do |acc, el|
+    # debugger
+    acc += el
+    if acc > max 
+      max = acc
+    end
+    if acc < 0
+      acc = 0
+    end
+    acc
+  end
+
+  max
+end
+
+ list2 = [2, 3, -6, 7, -6, 7]
+p largest_contigiuous_subsum_2(list2) #=> 8
+
 
 # require 'benchmark'
 # n = 50000
