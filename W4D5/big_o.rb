@@ -41,24 +41,12 @@ puts "-" * 30 + "Largest Contiguous Sub-sum" + "-" * 30
 puts
 
 def largest_contigiuous_subsum(arr)
-  max = arr[0]
+
   subs = []
-  max_sub = []
-  arr.length.times do |start_pos| # 0 , 1, 2
-    [arr.length.times do |end_pos| # arr[0..0] arr[0..1] arr[0..2] if end_pos >= start_pos
-      if end_pos >= start_pos
-        substring = arr[start_pos..end_pos]
-        subs << substring
-      end
-    end
+  (0..arr.length).each do |i|
+    subs << arr.combination(i).to_a
   end
-  
-  subs.each do |sub| 
-    if  sub.sum > max
-      max_sub = sub
-    end
-  end
-  max_sub.sum
+  subs
 end
 
 list2 = [5, 3, -7]
