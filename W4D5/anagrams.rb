@@ -17,7 +17,7 @@ p anagram?("gizmo", "sally")
 p anagram?("elvis", "lives")
 
 
-def anagram2?(str1, str2)
+def anagram2?(str1, str2) #n^2
     str1_arr = str1.split("")
     str2_arr = str2.split("") 
 
@@ -45,3 +45,13 @@ p anagram2?("elvis", "lives")
 puts
 puts "-" * 30 + "Phase III" + "-" * 30
 puts
+
+def anagram_3?(str1, str2) # n^2
+    str1_arr = str1.split("")
+    str2_arr = str2.split("")
+    str1_arr.sort == str2_arr.sort
+
+end
+
+p anagram_3?("gizmo", "sally")
+p anagram_3?("elvis", "lives")
