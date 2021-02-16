@@ -46,7 +46,7 @@ puts
 puts "-" * 30 + "Phase III" + "-" * 30
 puts
 
-def anagram_3?(str1, str2) # n^2
+def anagram_3?(str1, str2) # n log n
     str1_arr = str1.split("")
     str2_arr = str2.split("")
     str1_arr.sort == str2_arr.sort
