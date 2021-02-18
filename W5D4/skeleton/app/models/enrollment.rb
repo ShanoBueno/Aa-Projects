@@ -5,6 +5,5 @@ class Enrollment < ApplicationRecord
   belongs_to :course,
     foreign_key: :course_id,
     class_name: :Course 
-  
 
 end
