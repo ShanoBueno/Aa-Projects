@@ -53,6 +53,15 @@ class User
     SQL
     users.map { |hsh| User.new(hsh) }
   end
+
+  def author_questions
+    Question.find_by_author_id(id)
+  end
+
+  def author_replies
+    Reply.find_by_replier_id(id)
+  end
+
   
   def initialize(options)
     @id = options['id']
@@ -136,4 +145,9 @@ end
 # p Reply.find_by_replier_id(2)
 # p Reply.find_by_question_id(2)
 # p QuestionFollow.find_by_id(2)
-# p QuestionLike.find_by_id(2)
+# # p QuestionLike.find_by_id(2)
+var = User.find_by_id(3)
+# p var.author_questions
+# p var
+
+p var.author_replies
