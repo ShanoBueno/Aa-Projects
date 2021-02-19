@@ -1,5 +1,7 @@
 def it_was_ok
-  # Consider the following:
+
+  Movie.select(:id, :title,:score).where(score: (2..3))
+  # Consider the following
   #
   # Movie.where(yr: 1970..1979)
   #
@@ -10,11 +12,14 @@ def it_was_ok
 end
 
 def harrison_ford
+
+  
+  # Movie.select(:id,:title).where(Actor.name:"Harrison Ford").where.not(Casting.ord:1)
   # Consider the following:
   #
-  # Actor
-  #   .joins(:movies)
-  #   .where(movies: { title: 'Blade Runner' })
+  Movie
+    .select(:id,:title)
+    .joins(:actors).where(actors: {name:"Harrison Ford"}).where.not(castings:{ord:1})
   #
   # It's possible to join based on active record relations defined in models.
   #
