@@ -1,0 +1,479 @@
+  [1m[35m (2205.7ms)[0m  [1m[35mCREATE DATABASE "characters_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (317.5ms)[0m  [1m[35mCREATE DATABASE "characters_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3610383628162310055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCharacters (20210228175252)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "characters" ("id" bigserial primary key, "name" character varying NOT NULL, "sex" character varying NOT NULL, "birth_date" date NOT NULL, "alignment" character varying NOT NULL)[0m
+  ↳ db/migrate/20210228175252_create_characters.rb:3
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_characters_on_name" ON "characters"  ("name")[0m
+  ↳ db/migrate/20210228175252_create_characters.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210228175252"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-28 17:55:19.252958"], ["updated_at", "2021-02-28 17:55:19.252958"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3610383628162310055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3610383628162310055)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateWeapons (20210228175736)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "weapons" ("id" bigserial primary key, "type" character varying NOT NULL, "ammo" integer NOT NULL, "charater_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210228175736_create_weapons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210228175736"]]
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3610383628162310055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3610383628162310055)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3610383628162310055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3610383628162310055)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Addtimestamps (20210228180351)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3610383628162310055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3610383628162310055)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Addtimestamps (20210228180351)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "characters" ADD "created_at" timestamp NOT NULL[0m
+  ↳ db/migrate/20210228180351_addtimestamps.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "characters" ADD "updated_at" timestamp NOT NULL[0m
+  ↳ db/migrate/20210228180351_addtimestamps.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210228180351"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3610383628162310055)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/characters/new" for ::1 at 2021-02-28 14:16:04 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/shane/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/shane/Desktop/aA-projects/W6D7/characters/app/controllers/characters_controller.rb:34: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/characters_controller.rb:34: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/characters/new" for ::1 at 2021-02-28 14:16:44 -0500
+  
+LoadError (Unable to autoload constant CharactersController, expected /Users/shane/Desktop/aA-projects/W6D7/characters/app/controllers/characters_controller.rb to define it):
+  
+activesupport (5.2.4.5) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+activesupport (5.2.4.5) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.4.5) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.4.5) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.4.5) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.5) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.4.5) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.4.5) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.5) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/characters/new" for ::1 at 2021-02-28 14:17:37 -0500
+  
+LoadError (Unable to autoload constant CharactersController, expected /Users/shane/Desktop/aA-projects/W6D7/characters/app/controllers/characters_controller.rb to define it):
+  
+activesupport (5.2.4.5) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+activesupport (5.2.4.5) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.5) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.4.5) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.4.5) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.4.5) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.5) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.4.5) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.4.5) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.5) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.5) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.5) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/characters/new" for ::1 at 2021-02-28 14:19:51 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 8.4ms)
+
+
+  
+ActionView::MissingTemplate (Missing template characters/new, application/new with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/shane/Desktop/aA-projects/W6D7/characters/app/views"
+):
+  
+app/controllers/characters_controller.rb:14:in `new'
+Started GET "/characters/new" for ::1 at 2021-02-28 14:22:03 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2085ms (Views: 2083.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/characters/new" for ::1 at 2021-02-28 14:37:18 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 174ms (Views: 172.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/characters/index" for ::1 at 2021-02-28 14:37:28 -0500
+Processing by CharactersController#show as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}, "id"=>"index"}
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:8
+Completed 404 Not Found in 15ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Character with 'id'=index):
+  
+app/controllers/characters_controller.rb:8:in `show'
+Started GET "/character/index" for ::1 at 2021-02-28 14:37:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/character/index"):
+  
+actionpack (5.2.4.5) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/characters/index" for ::1 at 2021-02-28 14:37:56 -0500
+Processing by CharactersController#show as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}, "id"=>"index"}
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:8
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Character with 'id'=index):
+  
+app/controllers/characters_controller.rb:8:in `show'
+Started GET "/characters/new" for ::1 at 2021-02-28 15:50:01 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (390.5ms)
+Completed 500 Internal Server Error in 470ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `character' for #<#<Class:0x00007f80f68bf2f8>:0x00007f80fe06c2b0>
+Did you mean?  @character):
+    4:   <label for="name">Character Name</label>
+    5:   <input id="name" 
+    6:     type="text"
+    7:     value="<%=character.name%>">
+    8:   <br>
+    9: 
+   10:   <label for="char_birth_date">Birthdate</label>
+  
+app/views/characters/new.html.erb:7:in `_app_views_characters_new_html_erb___2306653031945296511_70095997186460'
+app/controllers/characters_controller.rb:14:in `new'
+Started GET "/characters/new" for ::1 at 2021-02-28 15:51:03 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 158ms (Views: 157.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/characters/new" for ::1 at 2021-02-28 16:04:00 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (408.8ms)
+Completed 500 Internal Server Error in 472ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `character' for #<#<Class:0x00007f80f68bf2f8>:0x00007f80fadad478>
+Did you mean?  @character):
+    42:   <option disabled selected>-- select alignment --</option>
+    43:     <%Character::ALIGNMENT.each do |alignment|%>
+    44:     <option>
+    45:     <%= character.alignment == alignment ? "selected" : ""%>
+    46:     value="<%= alignment %>">
+    47:     <%=alignment.upcase%>
+    48:     </option>
+  
+app/views/characters/new.html.erb:45:in `block in _app_views_characters_new_html_erb___2306653031945296511_70095989414620'
+app/views/characters/new.html.erb:43:in `each'
+app/views/characters/new.html.erb:43:in `_app_views_characters_new_html_erb___2306653031945296511_70095989414620'
+app/controllers/characters_controller.rb:14:in `new'
+Started GET "/characters/new" for ::1 at 2021-02-28 16:04:32 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 115ms (Views: 114.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/characters/new" for ::1 at 2021-02-28 16:08:07 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 70ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/characters/new" for ::1 at 2021-02-28 16:09:13 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 84ms (Views: 83.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/characters/new" for ::1 at 2021-02-28 16:10:41 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 76ms (Views: 75.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/characters/new" for ::1 at 2021-02-28 16:11:11 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 125ms (Views: 124.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/characters/new" for ::1 at 2021-02-28 16:11:42 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 90ms (Views: 89.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/characters/index" for ::1 at 2021-02-28 16:18:36 -0500
+Processing by CharactersController#show as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}, "id"=>"index"}
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:8
+Completed 404 Not Found in 4ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Character with 'id'=index):
+  
+app/controllers/characters_controller.rb:8:in `show'
+Started GET "/characters/index" for ::1 at 2021-02-28 16:28:54 -0500
+  
+SyntaxError (/Users/shane/Desktop/aA-projects/W6D7/characters/app/controllers/characters_controller.rb:42: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/characters_controller.rb:42: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/characters/index" for ::1 at 2021-02-28 16:29:26 -0500
+Processing by CharactersController#show as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}, "id"=>"index"}
+  [1m[36mCharacter Load (0.6ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:9
+Completed 404 Not Found in 59ms (ActiveRecord: 11.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Character with 'id'=index):
+  
+app/controllers/characters_controller.rb:9:in `show'
+Started GET "/characters/index" for ::1 at 2021-02-28 16:29:30 -0500
+Processing by CharactersController#show as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}, "id"=>"index"}
+  [1m[36mCharacter Load (4.0ms)[0m  [1m[34mSELECT  "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:9
+Completed 404 Not Found in 6ms (ActiveRecord: 4.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Character with 'id'=index):
+  
+app/controllers/characters_controller.rb:9:in `show'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/characters/new" for ::1 at 2021-02-28 16:39:46 -0500
+Processing by CharactersController#new as */*
+  Parameters: {"user"=>{"email"=>"clean@thirdy.com"}}
+  Rendering characters/new.html.erb within layouts/application
+  Rendered characters/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 79ms (Views: 69.6ms | ActiveRecord: 1.8ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

@@ -1,0 +1,59 @@
+<form class=""action=<%=character_url(@character)%>" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+  <label for="name">Character Name</label>
+  <input id="name" 
+    type="text"
+    value="<%=@character.name%>">
+  <br>
+
+  <label for="char_birth_date">Birthdate</label>
+  <input
+    type="date"
+    name="character[birth_date]"
+    id="char_birth_date"
+    value="<%=@character.birth_date%>">
+ <br>   
+
+
+ <input
+  type="radio"
+  name="character[sex]"
+  value="M"
+  id="character_sex_male"
+  <%=@character.sex == "M" ? "checked" : ""%>>
+  <label for="character_sex_male">Male</label>
+  <input
+    type="radio"
+    name="character[sex]"
+    value="F"
+    id="character_sex_female"
+    <%=@character.sex == "F" ? "checked" : ""%>>
+  <label for="character_sex_female">Female</label>
+  <input
+    type="radio"
+    name="character[sex]"
+    value"NB"
+    id="@character.sex" == "NB" ? "checked" : ""%>>
+  <label for="character_sex_nb">Non-Binary</label>
+  <br>
+
+  <label for="character_alignment">Alignment</label>
+  <select name="character[alignment]" id="character_alignment">
+  <option disabled selected>-- select alignment --</option>
+    <%Character::ALIGNMENT.each do |alignment|%>
+    <option
+    <%= @character.alignment == alignment ? "selected" : ""%>
+    value="<%= alignment %>">
+    <%=alignment.upcase%>
+    </option>
+    <%end%>
+    </select>
+    <br>
+    
+
+
+  
+
+
+  <input type="submit" value="Update Character">
+</form>

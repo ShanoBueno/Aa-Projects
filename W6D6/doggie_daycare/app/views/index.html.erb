@@ -1,0 +1,11 @@
+<h1>ALL OF OUR SUPER FRIENDLY "DOGS"</h1>
+
+<ul>
+  <% @dogs.each do |dog|%>
+    <li>NAME: <%= dog.name %></li>
+    <li>BREED: <%= dog.breed %></li>
+    <li>AGE: <%= dog.age %></li>
+  <% end %>
+</ul>
+
+
