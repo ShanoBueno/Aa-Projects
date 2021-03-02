@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>NinetyNineCats</title>
@@ -9,6 +10,20 @@
   </head>
 
   <body>
+  <%if @current_user%>
+  <h1><%=@user.user_name%></h1>
+   <%end%>
+   <%if @current_user%>
+   <form action="<%=session_url%>" method="destroy">
+   <input type="submit" value="Log Out">
+   </form>
+   <%else%>
+   <form action="<%=new_session_url%>" method="post">
+   <input type="submit" value="Sign In">
+   </form>
+
+   <%end%>
+
     <%= yield %>
   </body>
 </html>

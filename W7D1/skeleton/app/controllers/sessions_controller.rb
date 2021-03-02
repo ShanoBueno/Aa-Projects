@@ -8,9 +8,11 @@ class SessionsController < ApplicationController
 
   def create
 
-    user = User.find_by_credentials(params[:user][:user_name], params[:user][:password])
+    self.login_user!
 
-    session[:session_token] = user.reset_session_token!
+    # user = User.find_by_credentials(params[:user][:user_name], params[:user][:password])
+
+    # session[:session_token] = user.reset_session_token!
 
     redirect_to cats_url
 
