@@ -1,5 +1,8 @@
 .main-nav {
-
+  display: block;
+  background: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .left-nav > ul,
@@ -8,10 +11,12 @@
 }
 
 .left-nav {
-
+  display: block;
+  float: left;
   > ul {
     > li {
-
+      float: left;
+      padding-left: 5px;
     }
   }
 
@@ -21,7 +26,8 @@
 }
 
 .right-nav  {
-
+  display: block;
+  float: right;
   > ul {
 
     > li {
