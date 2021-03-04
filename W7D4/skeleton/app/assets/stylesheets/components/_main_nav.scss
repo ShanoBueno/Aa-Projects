@@ -1,8 +1,11 @@
 .main-nav {
-  display: block;
+  display: flex;
   background: none;
+  justify-content: space-between;
   padding-top: 5px;
   padding-bottom: 5px;
+  border-bottom: solid black;
+  border-bottom-width: 1px;
 }
 
 .left-nav > ul,
@@ -17,8 +20,16 @@
   > ul {
     > li {
       float: left;
+      padding: 10px;
       padding-left: 5px;
       font-family: $sans-serif;
+    }
+    > li :hover {
+      background: rgb(214, 214, 214);
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 5px;
+      border-color: rgb(214, 214, 214);
     }
   }
 
@@ -30,15 +41,24 @@
 
 
 .right-nav  {
-  display: block;
-  float: right;
+  display: flex;
+  align-items: center;
   font-family: $sans-serif;
   font-size: 14px; 
   > ul {
 
     > li {
+      float: right;
+      padding-right: 5px;
       font-family: $sans-serif;
-  
+      padding: 10px;
+    }
+    > li :hover {
+      background: rgb(161, 147, 223);
+      border-radius: 5px;
+      border-style: solid;
+      border-width: 3px;
+      border-color: rgb(32, 0, 146);
     }
 
     > li:last-of-type {
