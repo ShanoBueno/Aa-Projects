@@ -3,10 +3,14 @@
 #gear-dropdown-button:hover .gear-dropdown {
   display: block;
   position: absolute;
+
 }
 
-.gear-dropdown {
+#gear-dropdown {
   position: absolute;
   display: none;
   float: right;
+  z-index: 10000;
+  border-width: 1px; 
+
 }
