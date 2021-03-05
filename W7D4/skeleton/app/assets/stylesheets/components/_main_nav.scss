@@ -27,8 +27,8 @@
     > li :hover {
       background: rgb(214, 214, 214);
       border-style: solid;
-      border-width: 2px;
-      border-radius: 5px;
+      border-width: 1px;
+      border-radius: 1px;
       border-color: rgb(214, 214, 214);
     }
   }
@@ -37,6 +37,7 @@
 
   }
 }
+
 
 
 
@@ -65,7 +66,15 @@
   
     }
   }
-  
+
+  .fas.fa-cog {
+
+    background-color: lightgray;
+    border-radius: 5px;
+    border-width: 0px;
+    padding: 5px; 
+  }
+
   i {
 
   }
